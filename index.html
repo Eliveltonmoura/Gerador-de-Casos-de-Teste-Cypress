@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Casos de Teste Cypress</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 Gerador de Casos de Teste Cypress</h1>
+            <p>Crie casos de teste automatizados de forma rápida e organizada</p>
+        </div>
+
+        <div class="content">
+            <div class="form-section">
+                <h2>📝 Configuração do Teste</h2>
+                
+                <div class="form-group">
+                    <label for="testName">Nome do Teste</label>
+                    <input type="text" id="testName" placeholder="Ex: Login com credenciais válidas">
+                </div>
+
+                <div class="form-group">
+                    <label for="testDescription">Descrição</label>
+                    <textarea id="testDescription" placeholder="Descreva o objetivo do teste"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="testUrl">URL Base</label>
+                    <input type="text" id="testUrl" placeholder="Ex: https://exemplo.com/login">
+                </div>
+
+                <div class="form-group">
+                    <label for="testType">Tipo de Teste</label>
+                    <select id="testType">
+                        <option value="e2e">E2E (End-to-End)</option>
+                        <option value="component">Componente</option>
+                        <option value="api">API</option>
+                        <option value="integration">Integração</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Passos do Teste</label>
+                    <div class="steps-container" id="stepsContainer">
+                        <div class="step-item">
+                            <input type="text" placeholder="Ex: cy.visit('/')">
+                            <button class="btn btn-remove" onclick="removeStep(this)">✕</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-add" onclick="addStep()">+ Adicionar Passo</button>
+                </div>
+
+                <button class="btn btn-primary" onclick="generateTest()">Gerar Código Cypress</button>
+
+                <div class="test-list" id="testList">
+                    <h3>Testes Salvos</h3>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2>💻 Código Gerado</h2>
+                <div class="code-output" id="codeOutput">
+                    <pre>// O código Cypress aparecerá aqui...</pre>
+                </div>
+                <button class="btn btn-copy" onclick="copyCode()">📋 Copiar Código</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
