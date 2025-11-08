@@ -1,0 +1,1 @@
+# Gerador-de-Casos-de-Teste-Cypress
